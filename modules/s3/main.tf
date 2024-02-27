@@ -33,7 +33,8 @@ resource "aws_iam_policy" "replication_s3_policy" {
     {
       "Action": [
         "s3:GetReplicationConfiguration",
-        "s3:ListBucket"
+        "s3:ListBucket",
+        "s3:PutBucketAcl"
       ],
       "Effect": "Allow",
       "Resource": [
@@ -109,7 +110,8 @@ data "aws_iam_policy_document" "bucket_policy_doc_replication_bucket" {
       "s3:RestoreObject",
       "s3:PutObjectVersionTagging",
       "s3:PutObjectTagging",
-      "s3:PutObjectAcl"
+      "s3:PutObjectAcl",
+      "s3:PutBucketAcl"
     ]
 
     resources = [
