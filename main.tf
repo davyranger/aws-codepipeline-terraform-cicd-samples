@@ -23,7 +23,7 @@ terraform {
     # Replace this with your bucket name!
     bucket         = "terraform-up-and-running-state-health12345"
     key            = "templates/terraform.tfstate"
-    region         = "us-west-1"
+    region         = "us-west-2"
 
     # Replace this with your DynamoDB table name!
     dynamodb_table = "terraform-up-and-running-locks12345"
@@ -32,7 +32,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-west-1"
+  region = "us-west-2"
 }
 
 
