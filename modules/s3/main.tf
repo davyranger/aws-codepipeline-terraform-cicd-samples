@@ -186,7 +186,8 @@ data "aws_iam_policy_document" "bucket_policy_doc_codepipeline_bucket" {
       "s3:RestoreObject",
       "s3:PutObjectVersionTagging",
       "s3:PutObjectTagging",
-      "s3:PutObjectAcl"
+      "s3:PutObjectAcl",
+      "s3:PutBucketAcl"
     ]
 
     resources = [

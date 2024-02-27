@@ -18,18 +18,18 @@ terraform {
 #initialise the backend
 ###############################
 
-terraform {
-  backend "s3" {
-    # Replace this with your bucket name!
-    bucket         = "terraform-up-and-running-state-health12"
-    key            = "templates/terraform.tfstate"
-    region         = "us-west-2"
+# terraform {
+#   backend "s3" {
+#     # Replace this with your bucket name!
+#     bucket         = "terraform-up-and-running-state-health12"
+#     key            = "templates/terraform.tfstate"
+#     region         = "us-west-2"
 
-    # Replace this with your DynamoDB table name!
-    dynamodb_table = "terraform-up-and-running-locks12345"
-    encrypt        = true
-  }
-}
+#     # Replace this with your DynamoDB table name!
+#     dynamodb_table = "terraform-up-and-running-locks12345"
+#     encrypt        = true
+#   }
+# }
 
 provider "aws" {
   region = "us-west-2"
