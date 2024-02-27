@@ -44,7 +44,8 @@ resource "aws_iam_policy" "replication_s3_policy" {
       "Action": [
         "s3:GetObjectVersionForReplication",
         "s3:GetObjectVersionAcl",
-          "s3:GetObjectVersionTagging"
+          "s3:GetObjectVersionTagging",
+          "s3:PutBucketAcl"
       ],
       "Effect": "Allow",
       "Resource": [
@@ -55,7 +56,8 @@ resource "aws_iam_policy" "replication_s3_policy" {
       "Action": [
         "s3:ReplicateObject",
         "s3:ReplicateDelete",
-        "s3:ReplicateTags"
+        "s3:ReplicateTags",
+        "s3:PutBucketAcl"
       ],
       "Effect": "Allow",
       "Resource": "${aws_s3_bucket.replication_bucket.arn}/*"
