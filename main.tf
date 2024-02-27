@@ -21,7 +21,7 @@ terraform {
 terraform {
   backend "s3" {
     # Replace this with your bucket name!
-    bucket         = "terraform-up-and-running-state-health12345"
+    bucket         = "terraform-up-and-running-state-health12"
     key            = "templates/terraform.tfstate"
     region         = "us-west-2"
 

@@ -257,7 +257,7 @@ resource "aws_s3_bucket_replication_configuration" "replication_config" {
 #########################################################
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "terraform-up-and-running-state-health12345"
+  bucket = "terraform-up-and-running-state-health12"
  
   # Prevent accidental deletion of this S3 bucket
   lifecycle {
