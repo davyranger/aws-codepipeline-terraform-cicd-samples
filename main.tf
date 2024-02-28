@@ -18,22 +18,22 @@ terraform {
 #initialise the backend
 ###############################
 
-terraform {
-  backend "s3" {
-    # Replace this with your bucket name!
-    bucket         = "terraform-up-and-running-state-12345"
-    key            = "templates/terraform.tfstate"
-    region         = "us-west-2"
+# terraform {
+#   backend "s3" {
+#     # Replace this with your bucket name!
+#     bucket         = "terraform-up-and-running-state-12345"
+#     key            = "templates/terraform.tfstate"
+#     region         = "us-west-2"
 
-    # Replace this with your DynamoDB table name!
-    dynamodb_table = "terraform-up-and-running-lock123"
-    encrypt        = true
-  }
-}
+#     # Replace this with your DynamoDB table name!
+#     dynamodb_table = "terraform-up-and-running-lock123"
+#     encrypt        = true
+#   }
+# }
 
-provider "aws" {
-  region = "us-west-2"
-}
+# provider "aws" {
+#   region = "us-west-2"
+# }
 
 
 #Module for creating a new S3 bucket for storing pipeline artifacts
