@@ -1,8 +1,8 @@
-# #This solution, non-production-ready template describes AWS Codepipeline based CICD Pipeline for terraform code deployment.
-# #© 2023 Amazon Web Services, Inc. or its affiliates. All Rights Reserved.
-# #This AWS Content is provided subject to the terms of the AWS Customer Agreement available at
-# #http://aws.amazon.com/agreement or other written agreement between Customer and either
-# #Amazon Web Services, Inc. or Amazon Web Services EMEA SARL or both.
+#This solution, non-production-ready template describes AWS Codepipeline based CICD Pipeline for terraform code deployment.
+#© 2023 Amazon Web Services, Inc. or its affiliates. All Rights Reserved.
+#This AWS Content is provided subject to the terms of the AWS Customer Agreement available at
+#http://aws.amazon.com/agreement or other written agreement between Customer and either
+#Amazon Web Services, Inc. or Amazon Web Services EMEA SARL or both.
 
 resource "aws_iam_role" "replication_s3_role" {
   name = "${var.project_name}-replication-role"
@@ -44,7 +44,7 @@ resource "aws_iam_policy" "replication_s3_policy" {
       "Action": [
         "s3:GetObjectVersionForReplication",
         "s3:GetObjectVersionAcl",
-         "s3:GetObjectVersionTagging"
+          "s3:GetObjectVersionTagging"
       ],
       "Effect": "Allow",
       "Resource": [
@@ -252,8 +252,12 @@ resource "aws_s3_bucket_replication_configuration" "replication_config" {
   }
 }
 
+#########################################################
+############state file bucket############################
+#########################################################
+
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "terraform-up-and-running-state-health1234"
+  bucket = "terraform-up-and-running-state-health12345"
  
   # Prevent accidental deletion of this S3 bucket
   lifecycle {
@@ -287,7 +291,7 @@ resource "aws_s3_bucket_public_access_block" "public_access" {
 }
  
 resource "aws_dynamodb_table" "terraform_locks" {
-  name         = "terraform-up-and-running-locks1234"
+  name         = "terraform-up-and-running-locks12345"
   billing_mode = "PAY_PER_REQUEST"
   hash_key     = "LockID"
  
